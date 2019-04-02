@@ -125,9 +125,15 @@ var b = 0
 
 **What might these lines do?**
 
+These variables contain the RGB values for the background - Red, Green and Blue.
+
 **What happens if you change the numbers?**
 
+They will change the colour of the background.
+
 **What numbers are allowed / What numbers have an effect?**
+
+Each variable can contain values between 0 to 255.
 
 Look at this line:
 
@@ -137,11 +143,21 @@ createCanvas(400, 400)
 
 **What does createCanvas do?**
 
+It creates a canvas element with both width and height as 400px.
+
 **What happens if you change the numbers?**
+
+Depending on which number you change, it will resize the width or height.
 
 **What numbers are allowed/what numbers have an effect?**
 
+It only accepts integers as arguments, and if the numbers are too high, the browser will not render it as it will crash.
+
 **What happens if you add/remove a number?**
+
+If you remove a number from the parameters, it will not render but it will create a canvas element.
+
+The person cannot see it because it cannot see the width/height and the console will warn the user.
 
 **Can you guess what the `function setup() {` part does? What happens if you
 change the name of setup?**
@@ -152,14 +168,24 @@ Look at this line:
 background(r, g, b)
 ```
 
+The setup() function is called when the program begins. It is part of the p5.js library and changing this name will not call this function.
+
 **What does background do?**
+
+Changes the colour of the canvas to the RGB values.
 
 **What happens if you change the order of the letters in background? What does
 this tell you about how the computer uses them?**
 
+The computer uses RGB in order. Changing the order of the letters in the background function will mean that 'r' will now point to another value instead of 255
+
 **What happens if you change the number of letters?**
 
+If you remove a number/value from the background function, the canvas element will not render because it is expecting three values - RGB.
+
 **What happens if you change the letters for different ones?**
+
+If you change the letters to something else in the background function, it will not render a canvas element because the new letters are not defined.
 
 # Sketch B
 
@@ -184,10 +210,19 @@ function setup() {
 
 **What does setup do?**
 
+It creates a canvas element and sets the background colour to black.
+
 **What do `{` `}` mean? What happens if you remove one?**
+
+{} are blocks - they contain the code within the function and they specify when the block start and end.
+Removing one will cause the interpreter to throw a syntax error and it will not run.
 
 **What do the numbers in `background(0, 0, 0)` do? What happens when you change
 them? How is this different from Sketch A?**
+
+The difference between Sketch A and Sketch B is that in Sketch A, it uses variables. It is essentially the same functionality except that we don't store the values and use it directly in place.
+
+Changing the numbers will cause the background colour to change.
 
 Now look at these lines:
 
@@ -200,6 +235,8 @@ function draw() {
 
 **What does draw do?**
 
+Creates an ellipse at the position of the mouse with the width and height set to 30 pixels.
+
 Now look at:
 
 ```js
@@ -208,10 +245,18 @@ fill(255, 0, 0)
 
 **What do these numbers do? What happens when you change them?**
 
+Fill function will set the color of the shape being drawn.
+
 **What does fill mean? What happens if you change it to stroke?**
+
+Changing fill function to stroke will change the colour of the border instead.
 
 **What happens if you remove (or comment out) this line? What about if you
 include both fill and stroke on seperate lines?**
+
+Removing or commenting either line will have both the colour of the shape and the colour of the border set to white.
+
+It is possible to add both fill() and stroke() together to specify the colours.
 
 Now look at this line:
 
@@ -221,15 +266,29 @@ ellipse(mouseX, mouseY, 30, 30)
 
 **What does `ellipse` do?**
 
+Creates an ellipse shape.
+
 **What happens if you change the numbers?**
+
+Changing mouseX and mouseY to a number will specify the position of the ellipse on the canvas. It will no longer follow the position of the mouse.
+
+Changing 30 pixels on either the width and height will cause the ellipse to be bigger or smaller.
 
 **What do `mouseX` and `mouseY` mean?**
 
+They are the 'x' and 'y' coordinates of the mouse.
+
 **What happens if you change the order of the items between the `(` `)`?**
+
+The syntax of the ellipse function is (posX, posY, width, height).
+
+Changing the order of the items between the brackets will mean the values are different for those context.
 
 ---
 
 **What happens if you add `background(0)` after `draw() {`? Why?**
+
+Adding background(0) after draw will set the background colour to black every time the draw function is called. Because draw() function is called every time the mouse is moved, it is resetting the background to black and thus you cannot see the trailing ellipses.
 
 Replace the ellipse with a triangle. Use https://p5js.org/reference/ (the 2D
 primitives section) to help.
@@ -256,18 +315,30 @@ if (mouseIsPressed) {
 
 **What does `mouseIsPressed` mean?**
 
+mouseIsPressed is a Boolean value. It checks whether the mouse has been clicked.
+
 **What happens if you change `mouseIsPressed` to `keyIsPressed`?** You’ll need
 to click on the sketch so it registers keyboard events – use the ctrl key if you
 have issues with the keyboard.
 
+Changing 'mouseIsPressed' to 'keyIsPressed' will now check whether a key on the keyboard is pressed instead of the mouse. 
+
 **What does if / else do?**
+
+It is a conditional statement that handles the flow of the program's execution depending on a boolean value. In this case, it will change the background colour of the ellipse to red if a key/mouse has been pressed.
 
 **What happens if you remove the { } or ( )? Why?**
 
+Again, it will throw a syntax error because it is expecting the start/end block/bracket.
+
 **What happens if you change 255 to mouseX ? Why?**
+
+It will position the ellipse to 255 on the x-axis. This means that the ellipse will always be 255 on the x-axis and the user can only move the ellipse up or down on the y-axis.
 
 **Remove the outline of the circle. Use Google and the P5.js reference to help
 you.**
+
+You can remove the outline of the circle by calling noStroke().
 
 # Challenge
 
