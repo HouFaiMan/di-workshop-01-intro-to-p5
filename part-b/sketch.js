@@ -5,5 +5,6 @@ function setup() {
 
 function draw() {
   fill(255, 0, 0)
-  ellipse(mouseX, mouseY, 30, 30)
+  stroke(0, 0, 255)
+  triangle(mouseX, mouseY, 30, 30)
 }
