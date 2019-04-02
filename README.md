@@ -1,6 +1,6 @@
 # Workshop 1: Introducing JavaScript with P5.js
 
-Collaborators: [your github username] & [your partners github username]
+Collaborators: Hou Fai Man
 
 Make sure you’re working in pairs - on a single laptop. You’ll be **pair
 programming**. In pair programming, there are two roles - **driver** and
